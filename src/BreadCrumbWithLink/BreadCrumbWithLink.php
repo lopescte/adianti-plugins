@@ -1,5 +1,5 @@
 <?php
-namespace Lopescte\AdiantiPlugins\BreadCrumbWithLink;
+namespace Lopescte\AdiantiPlugins;
 
 use Adianti\Widget\Util\TBreadCrumb;
 use Adianti\Widget\Base\TElement;
