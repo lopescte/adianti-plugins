@@ -12,7 +12,7 @@ use Adianti\Widget\Base\TStyle;
  * @copyright  Copyright (c) 2019  Reis & Lopes Assessoria e Sistemas. (https://www.reiselopes.com.br)
  * @license    https://www.reiselopes.com.br/software-license
  */
-class BreadCrumbWithLink extends TBreadCrumb
+class TBreadCrumbWithLink extends TBreadCrumb
 {
     protected static $homeController;
     protected $container;

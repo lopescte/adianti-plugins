@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lopescte\\AdiantiPlugins\\BreadCrumbWithLink\\": "."
+            "Lopescte\\AdiantiPlugins\\TBreadCrumbWithLink\\": "src"
         }
     }
 }

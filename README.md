@@ -1,11 +1,10 @@
 Adianti Plugins
 ======
 
-[![Build Status](https://travis-ci.org/lopescte/adianti-plugins.png?branch=master)](https://travis-ci.org/lopescte/adianti-plugins)
-[![Latest Stable Version](https://poser.pugx.org/lopescte/adianti-plugins/v/stable.png)](https://packagist.org/packages/lopescte/adianti-plugins)
-[![Total Downloads](https://poser.pugx.org/lopescte/adianti-plugins/downloads.png)](https://packagist.org/packages/lopescte/adianti-plugins)
-[![Latest Unstable Version](https://poser.pugx.org/lopescte/adianti-plugins/v/unstable.png)](https://packagist.org/packages/lopescte/adianti-plugins)
-[![License](https://poser.pugx.org/lopescte/adianti-plugins/license.png)](https://packagist.org/packages/lopescte/adianti-plugins)
+[![Latest Stable Version](http://poser.pugx.org/lopescte/adianti-plugins/v)](https://packagist.org/packages/lopescte/adianti-plugins)
+[![Total Downloads](http://poser.pugx.org/lopescte/adianti-plugins/downloads)](https://packagist.org/packages/lopescte/adianti-plugins)
+[![PHP Version Require](http://poser.pugx.org/lopescte/adianti-plugins/require/php)](https://packagist.org/packages/lopescte/adianti-plugins)
+[![License](http://poser.pugx.org/lopescte/adianti-plugins/license)](https://packagist.org/packages/lopescte/adianti-plugins)
 
 ## Easy Installation
 
