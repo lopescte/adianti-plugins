@@ -33,7 +33,7 @@ class TBreadCrumbWithLink extends TBreadCrumb
         $this->container->{'class'} = 'tbreadcrumbwithlink';
         parent::add( $this->container );
         
-        TStyle::importFromFile('vendor/lopescte/adianti-plugins/TBreadCrumbWithLink/css/style.css');
+        TStyle::importFromFile('vendor/lopescte/adianti-plugins/src/TBreadCrumbWithLink/css/style.css');
     }
     
     /**
