@@ -1,5 +1,5 @@
 <?php
-namespace Lopescte\AdiantiPlugins;
+namespace Lopescte\AdiantiPlugins\TBreadCrumbWithLink;
 
 use Adianti\Widget\Util\TBreadCrumb;
 use Adianti\Widget\Base\TElement;
@@ -7,9 +7,7 @@ use Adianti\Widget\Base\TStyle;
 /**
  * TBreadCrumbWithLink
  *
- * @version    1.0.0
- * @package    lib
- * @subpackage util
+ * @version    1.0.4
  * @author     Marcelo Lopes
  * @copyright  Copyright (c) 2019  Reis & Lopes Assessoria e Sistemas. (https://www.reiselopes.com.br)
  * @license    https://www.reiselopes.com.br/software-license
