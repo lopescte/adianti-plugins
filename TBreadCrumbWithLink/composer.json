@@ -9,7 +9,10 @@
             "email": "lopes.cte@gmail.com"
         }
     ],
-    "require": {},
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.7.0"
+    },
     "autoload": {
         "psr-4": {
             "Lopescte\\Adianti-plugins\\TBreadCrumbWithLink": "src"
