@@ -1,6 +1,11 @@
 {
     "name": "lopescte/adianti-plugins",
     "description": "Plugins for Adianti Framework",
+    "homepage": "https://github.com/lopescte/adianti-plugins",
+    "keywords": [
+        "Adianti",
+        "Adianti Framework"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lopescte\\Adianti-Plugins\\": "src"
+            "Lopescte\\AdiantiPlugins\\": "src"
         }
     }
 }
