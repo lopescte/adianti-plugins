@@ -4,10 +4,15 @@ namespace TBreadCrumbWithLink;
 use Adianti\Widget\Util\TBreadCrumb;
 use Adianti\Widget\Base\TElement;
 use Adianti\Widget\Base\TStyle;
+use Adianti\Widget\Menu\TMenuParser;
+use Adianti\Core\AdiantiCoreTranslator;
+use SimpleXMLElement;
+use Exception;
+
 /**
  * TBreadCrumbWithLink
  *
- * @version    1.0.10
+ * @version    1.1.0
  * @author     Marcelo Lopes
  * @copyright  Copyright (c) 2019  Reis & Lopes Assessoria e Sistemas. (https://www.reiselopes.com.br)
  * @license    https://www.reiselopes.com.br/software-license
@@ -17,6 +22,8 @@ class TBreadCrumbWithLink extends TBreadCrumb
     protected static $homeController;
     protected $container;
     protected $items;
+    
+    private $parser;
     
     /**
      * Handle paths from a XML file
@@ -31,7 +38,7 @@ class TBreadCrumbWithLink extends TBreadCrumb
         $this->container->{'class'} = 'tbreadcrumbwithlink';
         parent::add( $this->container );
         
-        TStyle::importFromFile('vendor/lopescte/adianti-plugins/src/TBreadCrumbWithLink/css/style.css');
+        TStyle::importFromFile('vendor/lopescte/adianti-plugins/src/TBreadCrumbWithLink/css/style.css');              
     }
     
     /**
@@ -135,5 +142,75 @@ class TBreadCrumbWithLink extends TBreadCrumb
     public static function setHomeController($className)
     {
         self::$homeController = $className;
+    }
+    
+    /**
+     * Render from a XML File
+     * @param $xml_file XML file menu
+     * @param $controller controller class
+     */
+    public function renderFromXML($xml_file, $controller)
+    {
+        if($xml_file)
+        {
+            $this->parser = new TMenuParser($xml_file);
+            $paths = $this->parser->getPath($controller);
+           
+            if (!empty($paths))
+            {
+               
+                $count = 1;
+                foreach ($paths as $path)
+                {
+                    if (!empty($path))
+                    {
+                        $module = (in_array($path, $this->getPrograms())) ? $path : NULL;
+                        $this->addItem($path, $module, $count == count($paths));
+                        $count++;
+                    }
+                }
+            }
+        }
+    }
+    
+    /**
+     * Return the controller path
+     */
+    public function getPath($controller)
+    {
+        return $this->parser->getPath($controller);
+    }
+    
+    /**
+     * Return all the programs under app/control
+     */
+    private function getPrograms()
+    {
+        try
+        {
+            $entries = array();
+            $iterator = new \AppendIterator();
+            $iterator->append(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator('app/control'), \RecursiveIteratorIterator::CHILD_FIRST));
+            $iterator->append(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator('app/view'),    \RecursiveIteratorIterator::CHILD_FIRST));
+            
+            foreach ($iterator as $arquivo)
+            {
+                if (substr($arquivo, -4) == '.php')
+                {
+                    $name = $arquivo->getFileName();
+                    $pieces = explode('.', $name);
+                    $class = (string) $pieces[0];
+                    
+                    $entries[$class] = $class;
+                }
+            }
+            
+            ksort($entries);
+            return $entries;
+        }
+        catch (Exception $e)
+        {
+            new TMessage('error', $e->getMessage());
+        }
     }
 }

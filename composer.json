@@ -1,22 +1,27 @@
 {
     "name": "lopescte/adianti-plugins",
-    "description": "Plugins for Adianti Framework",
+    "description": "BreadCrumb Plugin for Adianti Framework with link to navigation.",
     "homepage": "https://github.com/lopescte/adianti-plugins",
     "keywords": [
         "Adianti",
-        "Adianti Framework"
+        "Adianti Framework",
+        "BreadCrumb"
     ],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Marcelo Lopes",
-            "email": "lopes.cte@gmail.com"
+            "email": "lopes.cte@gmail.com",
+            "homepage": "https://www.reiselopes.com.br"
         }
     ],
     "minimum-stability": "dev",
     "require": {
         "php": "^5.6 || ^7.0 || ^8.0"
+    },
+    "support": {
+        "issues": "https://github.com/lopescte/adianti-plugins/issues"
     },
     "autoload": {
         "psr-4": {
