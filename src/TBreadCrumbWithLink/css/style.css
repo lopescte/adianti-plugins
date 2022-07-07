@@ -36,7 +36,7 @@ ol.tbreadcrumbwithlink li.home a:after {
     font-family: "Font Awesome 5 Free";
     font-style: normal;
     font-weight: 600;
-    color: #505050;
+    color: #757575;
     margin-top: 1px;
 }
 ol.tbreadcrumbwithlink li:not(.home) a:after {
@@ -47,7 +47,7 @@ ol.tbreadcrumbwithlink li:not(.home) a:after {
     color: #b1b1b1;
 }
 ol.tbreadcrumbwithlink li span.selected {
-    color: #00f;
+    color: #757575;
 }
 ol.tbreadcrumbwithlink li a.bread {
     padding-left: 3px;
