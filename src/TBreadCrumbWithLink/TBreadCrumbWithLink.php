@@ -12,7 +12,7 @@ use Exception;
 /**
  * TBreadCrumbWithLink
  *
- * @version    1.1.1
+ * @version    1.1.2
  * @author     Marcelo Lopes
  * @copyright  Copyright (c) 2022  Reis & Lopes Assessoria e Sistemas. (https://www.reiselopes.com.br)
  * @license    https://www.reiselopes.com.br/software-license

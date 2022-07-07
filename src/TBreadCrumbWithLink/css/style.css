@@ -1,5 +1,6 @@
 .tbreadcrumbwithlink {
     float: left;
+    width: 100%;
     list-style: none outside none;
     margin: 0;
     padding: 0;
