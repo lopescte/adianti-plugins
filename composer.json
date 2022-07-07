@@ -1,6 +1,6 @@
 {
     "name": "lopescte/adianti-plugins",
-    "description": "BreadCrumb Plugin for Adianti Framework with link to navigation.",
+    "description": "This plugin provides a way to create Adianti BreadCrumbs with links, manual adding items or parsing XML file.",
     "homepage": "https://github.com/lopescte/adianti-plugins",
     "keywords": [
         "Adianti",
