@@ -12,9 +12,9 @@ use Exception;
 /**
  * TBreadCrumbWithLink
  *
- * @version    1.1.0
+ * @version    1.1.1
  * @author     Marcelo Lopes
- * @copyright  Copyright (c) 2019  Reis & Lopes Assessoria e Sistemas. (https://www.reiselopes.com.br)
+ * @copyright  Copyright (c) 2022  Reis & Lopes Assessoria e Sistemas. (https://www.reiselopes.com.br)
  * @license    https://www.reiselopes.com.br/software-license
  */
 class TBreadCrumbWithLink extends TBreadCrumb
@@ -100,6 +100,7 @@ class TBreadCrumbWithLink extends TBreadCrumb
         if( $last )
         {
             $li->add( $span );
+            $this->select($path);
         }
         else
         {
@@ -149,38 +150,37 @@ class TBreadCrumbWithLink extends TBreadCrumb
      * @param $xml_file XML file menu
      * @param $controller controller class
      */
-    public function renderFromXML($xml_file, $controller)
+    public function renderFromXML($xml_file, $controller, $noNext=TRUE)
     {
         if($xml_file)
         {
             $this->parser = new TMenuParser($xml_file);
             $paths = $this->parser->getPath($controller);
-           
+                                                               
             if (!empty($paths))
-            {
-               
+            {               
                 $count = 1;
                 foreach ($paths as $path)
-                {
+                {                    
                     if (!empty($path))
                     {
-                        $module = (in_array($path, $this->getPrograms())) ? $path : NULL;
-                        $this->addItem($path, $module, $count == count($paths));
+                        if($noNext)
+                        {
+                            $module = NULL;
+                            $end = $count == count($paths); 
+                        }else{ 
+                            $module = ($count == count($paths)) ? $controller : NULL;
+                            $end = $noNext; 
+                        }
+                        
+                        $this->addItem($path, $module, $end);
                         $count++;
                     }
                 }
             }
         }
     }
-    
-    /**
-     * Return the controller path
-     */
-    public function getPath($controller)
-    {
-        return $this->parser->getPath($controller);
-    }
-    
+        
     /**
      * Return all the programs under app/control
      */
